@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "紅燒牛肉麵",
+    "image": "https://picsum.photos/seed/recipe1/400/300",
+    "description": "濃郁牛肉湯頭搭配Q彈麵條，佐以青菜與香菜，是經典台式美食代表",
+    "cookTime": "60 分鐘",
+    "ingredients": ["牛腱", "牛肉麵條", "青菜", "香菜", "蔥", "薑", "八角", "桂皮", "醬油", "冰糖"]
+  },
+  {
+    "id": 2,
+    "title": "宮保雞丁",
+    "image": "https://picsum.photos/seed/recipe2/400/300",
+    "description": "酸甜微辣的經典川菜，雞肉鮮嫩搭配花生酥脆口感，下飯神菜",
+    "cookTime": "25 分鐘",
+    "ingredients": ["雞腿肉", "花生", "乾辣椒", "花椒", "青蔥", "醬油", "醋", "糖", "玉米澱粉"]
+  },
+  {
+    "id": 3,
+    "title": "梅干扣肉",
+    "image": "https://picsum.photos/seed/recipe3/400/300",
+    "description": "肥而不膩的客家經典菜色，梅干菜吸飽豬肉油香，軟糯入味",
+    "cookTime": "90 分鐘",
+    "ingredients": ["五花肉", "梅干菜", "薑", "蔥", "八角", "醬油", "米酒", "冰糖"]
+  },
+  {
+    "id": 4,
+    "title": "清蒸鮮魚",
+    "image": "https://picsum.photos/seed/recipe4/400/300",
+    "description": "保留魚肉原味的廣式清蒸做法，肉質鮮嫩滑順，蒸魚豉油提鮮",
+    "cookTime": "20 分鐘",
+    "ingredients": ["白鯧魚/鱸魚", "薑絲", "蔥絲", "蒸魚豉油", "熱油", "香菜"]
+  },
+  {
+    "id": 5,
+    "title": "椒鹽酥炸蝦",
+    "image": "https://picsum.photos/seed/recipe5/400/300",
+    "description": "殼酥肉嫩的椒鹽蝦，殼可連吃，椒鹽香氣濃郁，啤酒最佳拍檔",
+    "cookTime": "15 分鐘",
+    "ingredients": ["草蝦", "椒鹽粉", "蛋液", "澱粉", "蒜末", "九層塔", "辣椒"]
+  },
+  {
+    "id": 6,
+    "title": "-map豆腐",
+    "image": "https://picsum.photos/seed/recipe6/400/300",
+    "description": "麻辣鮮香的川式經典素食，嫩豆腐吸飽醬汁，米飯終結者",
+    "cookTime": "15 分鐘",
+    "ingredients": ["嫩豆腐", "豆瓣醬", "花椒粉", "蒜", "薑", "蔥花", "水澱粉", "香油"]
+  },
+  {
+    "id": 7,
+    "title": "日式咖哩飯",
+    "image": "https://picsum.photos/seed/recipe7/400/300",
+    "description": "濃郁咖哩醬汁包裹軟糯馬鈴薯、胡蘿蔔與雞肉，大人小孩都愛",
+    "cookTime": "40 分鐘",
+    "ingredients": ["雞腿肉", "馬鈴薯", "胡蘿蔔", "洋蔥", "日式咖哩塊", "白飯"]
+  },
+  {
+    "id": 8,
+    "title": "番茄牛肉湯麵",
+    "image": "https://picsum.photos/seed/recipe8/400/300",
+    "description": "酸甜番茄湯頭燉煮牛肉，湯汁濃郁鮮美，搭配手工麵條暖心暖胃",
+    "cookTime": "50 分鐘",
+    "ingredients": ["牛腩", "番茄", "麵條", "洋蔥", "蒜", "高湯", "羅勒葉", "黑胡椒"]
+  },
+  {
+    "id": 9,
+    "title": "糖醋排骨",
+    "image": "https://picsum.photos/seed/recipe9/400/300",
+    "description": "酸甜適度的江浙名菜，排骨炸至酥脆再裹醬，骨肉分離不乾柴",
+    "cookTime": "45 分鐘",
+    "ingredients": ["豬排骨", "糖", "醋", "醬油", "薑", "蔥", "料酒", "玉米澱粉"]
+  },
+  {
+    "id": 10,
+    "title": "綠豆沙湯",
+    "image": "https://picsum.photos/seed/recipe10/400/300",
+    "description": "消暑解熱的傳統甜點，綠豆煮至開花沙糯，冰鎮後口感最佳",
+    "cookTime": "40 分鐘",
+    "ingredients": ["綠豆", "冰糖", "水", "薄荷葉(裝飾)"]
+  }
+]

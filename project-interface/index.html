@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="食譜查詢 - 輸入食材或菜名快速尋找想做的料理">
+  <title>食譜查詢</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="search-page">
+    <h1>食譜查詢</h1>
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        class="form-input"
+        placeholder="輸入食材、菜名或關鍵字..."
+        autocomplete="off"
+        aria-label="搜尋關鍵字"
+      >
+      <div class="btn-group">
+        <button id="searchBtn" class="btn btn-primary" aria-label="開始查詢">查詢</button>
+        <button id="clearBtn" class="btn btn-secondary" aria-label="清空輸入">取消</button>
+      </div>
+    </div>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
