@@ -6,87 +6,87 @@
 // ========================================
 // 常數與狀態
 // ========================================
-const RECIPES_URL = 'data/recipes.json';
+const RECIPES_URL = 'data/my_recipes.json';
 const FALLBACK_RECIPES = [
   {
     id: 1,
-    title: "紅燒牛肉麵",
-    image: "https://picsum.photos/seed/recipe1/400/300",
-    description: "濃郁牛肉湯頭搭配Q彈麵條，佐以青菜與香菜，是經典台式美食代表",
-    cookTime: "60 分鐘",
-    ingredients: ["牛腱", "牛肉麵條", "青菜", "香菜", "蔥", "薑", "八角", "桂皮", "醬油", "冰糖"]
+    title: "(烹大師香菇風味) 素炒三杯時蔬-杏鮑菇,茄子,青椒",
+    cookTime: "25分鐘",
+    servings: "2人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/24552577",
+    image: "https://img-global.cpcdn.com/recipes/fcee5b0ddebf02c7/120x160cq50/%E7%83%B9%E5%A4%A7%E5%B8%AB%E9%A6%99%E8%8F%87%E9%A2%A8%E5%91%B3-%E7%B4%A0%E7%82%92%E4%B8%89%E6%9D%AF%E6%99%82%E8%94%AC-%E6%9D%8F%E9%AE%91%E8%8F%87%E8%8C%84%E5%AD%90%E9%9D%92%E6%A4%92-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 2,
-    title: "宮保雞丁",
-    image: "https://picsum.photos/seed/recipe2/400/300",
-    description: "酸甜微辣的經典川菜，雞肉鮮嫩搭配花生酥脆口感，下飯神菜",
-    cookTime: "25 分鐘",
-    ingredients: ["雞腿肉", "花生", "乾辣椒", "花椒", "青蔥", "醬油", "醋", "糖", "玉米澱粉"]
+    title: "香料茄子馬鈴薯（純素）",
+    cookTime: "40分鐘",
+    servings: "5人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/23950614",
+    image: "https://img-global.cpcdn.com/recipes/97300b86783f9267/120x160f0.469949_0.5_1.0q50/%E9%A6%99%E6%96%99%E8%8C%84%E5%AD%90%E9%A6%AC%E9%88%B4%E8%96%AF%E7%B4%94%E7%B4%A0-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 3,
-    title: "梅干扣肉",
-    image: "https://picsum.photos/seed/recipe3/400/300",
-    description: "肥而不膩的客家經典菜色，梅干菜吸飽豬肉油香，軟糯入味",
-    cookTime: "90 分鐘",
-    ingredients: ["五花肉", "梅干菜", "薑", "蔥", "八角", "醬油", "米酒", "冰糖"]
+    title: "九層塔茄子炒豆包和豆腐（純素）",
+    cookTime: "30分鐘",
+    servings: "5人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/22660023",
+    image: "https://img-global.cpcdn.com/recipes/2482ba1b52d64ef5/120x160f0.512295_0.5_1.0q50/%E4%B9%9D%E5%B1%A4%E5%A1%94%E8%8C%84%E5%AD%90%E7%82%92%E8%B1%86%E5%8C%85%E5%92%8C%E8%B1%86%E8%85%90%E7%B4%94%E7%B4%A0-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 4,
-    title: "清蒸鮮魚",
-    image: "https://picsum.photos/seed/recipe4/400/300",
-    description: "保留魚肉原味的廣式清蒸做法，肉質鮮嫩滑順，蒸魚豉油提鮮",
-    cookTime: "20 分鐘",
-    ingredients: ["白鯧魚/鱸魚", "薑絲", "蔥絲", "蒸魚豉油", "熱油", "香菜"]
+    title: "香料番茄茄子炒豆腸（純素）",
+    cookTime: "20分鐘",
+    servings: "5人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/22613976",
+    image: "https://img-global.cpcdn.com/recipes/361310e69f572db6/120x160f0.5_0.5_1.0q50/%E9%A6%99%E6%96%99%E7%95%AA%E8%8C%84%E8%8C%84%E5%AD%90%E7%82%92%E8%B1%86%E8%85%B8%E7%B4%94%E7%B4%A0-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 5,
-    title: "椒鹽酥炸蝦",
-    image: "https://picsum.photos/seed/recipe5/400/300",
-    description: "殼酥肉嫩的椒鹽蝦，殼可連吃，椒鹽香氣濃郁，啤酒最佳拍檔",
-    cookTime: "15 分鐘",
-    ingredients: ["草蝦", "椒鹽粉", "蛋液", "澱粉", "蒜末", "九層塔", "辣椒"]
+    title: "手撕茄子（五辛素）",
+    cookTime: "30 分鐘",
+    servings: "3 人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/22601147",
+    image: "https://img-global.cpcdn.com/recipes/7b0c79b54d0a2a71/120x160cq50/%E6%89%8B%E6%92%95%E8%8C%84%E5%AD%90%E4%BA%94%E8%BE%9B%E7%B4%A0-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 6,
-    title: "麻婆豆腐",
-    image: "https://picsum.photos/seed/recipe6/400/300",
-    description: "麻辣鮮香的川式經典素食，嫩豆腐吸飽醬汁，米飯終結者",
-    cookTime: "15 分鐘",
-    ingredients: ["嫩豆腐", "豆瓣醬", "花椒粉", "蒜", "薑", "蔥花", "水澱粉", "香油"]
+    title: "蕃茄茄子炒豆腸（純素）",
+    cookTime: "30分鐘",
+    servings: "5人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/22557636",
+    image: "https://img-global.cpcdn.com/recipes/b05a09ea9b30e277/120x160f0.523189_0.5_1.0q50/%E8%95%83%E8%8C%84%E8%8C%84%E5%AD%90%E7%82%92%E8%B1%86%E8%85%B8%E7%B4%94%E7%B4%A0-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 7,
-    title: "日式咖哩飯",
-    image: "https://picsum.photos/seed/recipe7/400/300",
-    description: "濃郁咖哩醬汁包裹軟糯馬鈴薯、胡蘿蔔與雞肉，大人小孩都愛",
-    cookTime: "40 分鐘",
-    ingredients: ["雞腿肉", "馬鈴薯", "胡蘿蔔", "洋蔥", "日式咖哩塊", "白飯"]
+    title: "茄子豆腐素咖哩",
+    cookTime: "20分鐘",
+    servings: "4人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/17391340",
+    image: "https://img-global.cpcdn.com/recipes/0ca28bc40a00987f/120x160cq50/%E8%8C%84%E5%AD%90%E8%B1%86%E8%85%90%E7%B4%A0%E5%92%96%E5%93%A9-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 8,
-    title: "番茄牛肉湯麵",
-    image: "https://picsum.photos/seed/recipe8/400/300",
-    description: "酸甜番茄湯頭燉煮牛肉，湯汁濃郁鮮美，搭配手工麵條暖心暖胃",
-    cookTime: "50 分鐘",
-    ingredients: ["牛腩", "番茄", "麵條", "洋蔥", "蒜", "高湯", "羅勒葉", "黑胡椒"]
+    title: "胡麻茄絲（素食料理）（簡單料理）",
+    cookTime: "10分鐘",
+    servings: "未提供",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/24292907",
+    image: "https://img-global.cpcdn.com/recipes/422699f12e6933f1/120x160cq50/%E8%83%A1%E9%BA%BB%E8%8C%84%E7%B5%B2%E7%B4%A0%E9%A3%9F%E6%96%99%E7%90%86%E7%B0%A1%E5%96%AE%E6%96%99%E7%90%86-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 9,
-    title: "糖醋排骨",
-    image: "https://picsum.photos/seed/recipe9/400/300",
-    description: "酸甜適度的江浙名菜，排骨炸至酥脆再裹醬，骨肉分離不乾柴",
-    cookTime: "45 分鐘",
-    ingredients: ["豬排骨", "糖", "醋", "醬油", "薑", "蔥", "料酒", "玉米澱粉"]
+    title: "蕃茄茄子芹菜炒蛋（蛋素）",
+    cookTime: "30分鐘",
+    servings: "2人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/17276119",
+    image: "https://img-global.cpcdn.com/recipes/c26dac643aa01e26/120x160f0.507536_0.5_1.0q50/%E8%95%83%E8%8C%84%E8%8C%84%E5%AD%90%E8%8A%B9%E8%8F%9C%E7%82%92%E8%9B%8B%E8%9B%8B%E7%B4%A0-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   },
   {
     id: 10,
-    title: "綠豆沙湯",
-    image: "https://picsum.photos/seed/recipe10/400/300",
-    description: "消暑解熱的傳統甜點，綠豆煮至開花沙糯，冰鎮後口感最佳",
-    cookTime: "40 分鐘",
-    ingredients: ["綠豆", "冰糖", "水", "薄荷葉(裝飾)"]
+    title: "吃素真幸福🥰 美味可口純素咖哩飯🍛",
+    cookTime: "60 分鐘",
+    servings: "2人份",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/24032306",
+    image: "https://img-global.cpcdn.com/recipes/f138cba5a1c30e09/120x160cq50/%E5%90%83%E7%B4%A0%E7%9C%9F%E5%B9%B8%E7%A6%8F%F0%9F%A5%B0-%E7%BE%8E%E5%91%B3%E5%8F%AF%E5%8F%A3%E7%B4%94%E7%B4%A0%E5%92%96%E5%93%A9%E9%A3%AF%F0%9F%8D%9B-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   }
 ];
 
@@ -127,11 +127,12 @@ function filterRecipes(keyword, list) {
   const kw = keyword.toLowerCase().trim();
   return list.filter(recipe => {
     const titleMatch = recipe.title.toLowerCase().includes(kw);
-    const descMatch = recipe.description.toLowerCase().includes(kw);
-    const ingredientMatch = recipe.ingredients.some(ing =>
-      ing.toLowerCase().includes(kw)
-    );
-    return titleMatch || descMatch || ingredientMatch;
+    // const descMatch = recipe.description.toLowerCase().includes(kw);
+    // const ingredientMatch = recipe.ingredients.some(ing =>
+    //   ing.toLowerCase().includes(kw)
+    // );
+    // return titleMatch || descMatch || ingredientMatch;
+    return titleMatch;
   });
 }
 
@@ -154,9 +155,10 @@ function renderCards(recipes, container) {
       >
       <div class="recipe-card__content">
         <h2 class="recipe-card__title">${escapeHtml(recipe.title)}</h2>
-        <p class="recipe-card__description">${escapeHtml(recipe.description)}</p>
+        <!-- <p class="recipe-card__description">${escapeHtml(recipe.description)}</p> -->
         <div class="recipe-card__meta">
           <span class="recipe-card__time">${escapeHtml(recipe.cookTime)}</span>
+          <a href="${escapeHtml(recipe.recipe_link)}" class="btn">了解更多</a>
         </div>
       </div>
     </article>

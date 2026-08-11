@@ -8,6 +8,7 @@ from selenium.common.exceptions import TimeoutException,ElementNotInteractableEx
 
 import pandas as pd
 from time import sleep
+import json
 
 def init_spider(keyword):
     # 設定 Chrome 瀏覽器的選項
@@ -100,19 +101,26 @@ def clear_data(recipe_list_whole):
 
             # 整合成一筆資料
             recipe_dict = {
+                "id": i+1,
                 "title": title,
-                "cooking_time": cooking_time,
+                "cookTime": cooking_time,
                 "servings": servings,
                 "recipe_link": recipe_link,
-                "img_url": img_url
+                "image": img_url
             }
 
             recipe_list.append(recipe_dict)
         except Exception as e:
             print(e)
 
-        # print(f"{i+1}, {title}, 製作時間:{cooking_time}, 份量:{servings}, 食譜連結:{recipe_link}, 圖片連結:{img_url}")
+        # print(f"{i+1}, {title}, 製作時間:{cookTime}, 份量:{servings}, 食譜連結:{recipe_link}, 圖片連結:{image}")
     return recipe_list
+
+def save_list_to_json(recipe_list):
+    with open('project-interface/data/my_recipes.json', 'w', encoding='utf-8') as f:
+        # ensure_ascii=False 確保中文能正常顯示（不會變成 \uXXXX）
+        # indent=4 讓 JSON 檔案格式化縮排，方便人類閱讀
+        json.dump(recipe_list, f, ensure_ascii=False, indent=4)
 
 if __name__ == '__main__':
     action, driver = init_spider('素食 茄子')
@@ -123,6 +131,8 @@ if __name__ == '__main__':
     
     clean_recipe_list = clear_data(recipe_list_whole)
     print(len(clean_recipe_list))
+
+    save_list_to_json(clean_recipe_list)
 
     driver.quit()
     print("驅動程式已關閉")
