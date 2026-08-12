@@ -6,7 +6,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException,ElementNotInteractableException, NoSuchElementException
 
-import pandas as pd
+# 解析 HTML / XML，將字串轉成可以操作的樹狀結構
+from bs4 import BeautifulSoup as bs
+import lxml
+
+# 將 Unicode 特殊空白轉換成標準的半形空白的套件
+import unicodedata
+
+# 其他
+# import pandas as pd
 from time import sleep
 import json
 
@@ -68,6 +76,37 @@ def clear_data(recipe_list_whole):
             # 取得食譜標題
             title = element.find_element(By.CSS_SELECTOR, 'a.block-link__main').text
 
+            # 取得食材及調味料
+            try:
+                ingredients_elem = element.find_element(By.CSS_SELECTOR, 'div.line-clamp-2.break-words')
+
+                # 取得該 div 的 innerHTML 原始碼
+                html_content = ingredients_elem.get_attribute('innerHTML')
+
+                # 用 BeautifulSoup 解析
+                soup = bs(html_content, 'lxml')
+
+                # 找出所有 span.text-cookpad-gray5 並將其從樹狀結構中自毀/刪除 (.decompose)
+                for unwanted in soup.select('span.text-cookpad-gray5'):
+                    unwanted.decompose()
+
+                # 取得文字並進行 Unicode 正規化 (NFKC)
+                ingredients_text = soup.get_text()
+                normalized_text = unicodedata.normalize('NFKC', ingredients_text)
+
+                # 利用 split() 將字串切開，同時剔除空白、隱形控制字元
+                ingredients_list = []
+                for item in normalized_text.split():
+                    # 清除字串前後的空白及跳脫字元
+                    clean_item = item.strip()
+                    
+                    # 確保清理後的字串不是空的，且長度 > 0 才加入 List
+                    if clean_item and clean_item.isprintable():
+                        ingredients_list.append(clean_item)
+
+            except NoSuchElementException:
+                ingredients_list = []
+            
             # 取得製作時間和份量
             cooking_time = "未提供"
             servings = "未提供"
@@ -103,6 +142,7 @@ def clear_data(recipe_list_whole):
             recipe_dict = {
                 "id": i+1,
                 "title": title,
+                "ingredients": ingredients_list,
                 "cookTime": cooking_time,
                 "servings": servings,
                 "recipe_link": recipe_link,
@@ -113,7 +153,7 @@ def clear_data(recipe_list_whole):
         except Exception as e:
             print(e)
 
-        # print(f"{i+1}, {title}, 製作時間:{cookTime}, 份量:{servings}, 食譜連結:{recipe_link}, 圖片連結:{image}")
+        # print(f"{i+1}, {title}, 食材及調味料:{ingredients_list}, 製作時間:{cookTime}, 份量:{servings}, 食譜連結:{recipe_link}, 圖片連結:{image}")
     return recipe_list
 
 def save_list_to_json(recipe_list):

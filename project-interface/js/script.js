@@ -9,16 +9,13 @@
 const RECIPES_URL = 'data/my_recipes.json';
 const FALLBACK_RECIPES = [
   {
-    id: 1,
-    title: "(烹大師香菇風味) 素炒三杯時蔬-杏鮑菇,茄子,青椒",
-    cookTime: "25分鐘",
-    servings: "2人份",
-    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/24552577",
-    image: "https://img-global.cpcdn.com/recipes/fcee5b0ddebf02c7/120x160cq50/%E7%83%B9%E5%A4%A7%E5%B8%AB%E9%A6%99%E8%8F%87%E9%A2%A8%E5%91%B3-%E7%B4%A0%E7%82%92%E4%B8%89%E6%9D%AF%E6%99%82%E8%94%AC-%E6%9D%8F%E9%AE%91%E8%8F%87%E8%8C%84%E5%AD%90%E9%9D%92%E6%A4%92-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
-  },
-  {
     id: 2,
     title: "香料茄子馬鈴薯（純素）",
+    ingredients: [
+      "茄子",
+      "中型馬鈴薯",
+      "適量香料、油、鹽和醬油"
+    ],
     cookTime: "40分鐘",
     servings: "5人份",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/23950614",
@@ -27,6 +24,14 @@ const FALLBACK_RECIPES = [
   {
     id: 3,
     title: "九層塔茄子炒豆包和豆腐（純素）",
+    ingredients: [
+      "豆包",
+      "豆腐",
+      "茄子",
+      "青龍",
+      "九層塔適量",
+      "適量油、鹽、醬油"
+    ],
     cookTime: "30分鐘",
     servings: "5人份",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/22660023",
@@ -35,6 +40,13 @@ const FALLBACK_RECIPES = [
   {
     id: 4,
     title: "香料番茄茄子炒豆腸（純素）",
+    ingredients: [
+      "豆腸",
+      "蕃茄",
+      "茄子",
+      "少許羅勒葉、九層塔",
+      "少許油、鹽、醬油"
+    ],
     cookTime: "20分鐘",
     servings: "5人份",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/22613976",
@@ -43,6 +55,7 @@ const FALLBACK_RECIPES = [
   {
     id: 5,
     title: "手撕茄子（五辛素）",
+    ingredients: [],
     cookTime: "30 分鐘",
     servings: "3 人份",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/22601147",
@@ -51,6 +64,12 @@ const FALLBACK_RECIPES = [
   {
     id: 6,
     title: "蕃茄茄子炒豆腸（純素）",
+    ingredients: [
+      "中型蕃茄",
+      "茄子",
+      "豆腸",
+      "少許羅勒葉粉、鹽、油、醬油"
+    ],
     cookTime: "30分鐘",
     servings: "5人份",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/22557636",
@@ -59,6 +78,12 @@ const FALLBACK_RECIPES = [
   {
     id: 7,
     title: "茄子豆腐素咖哩",
+    ingredients: [
+      "好侍素食咖哩",
+      "茄子",
+      "豆腐",
+      "洋蔥"
+    ],
     cookTime: "20分鐘",
     servings: "4人份",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/17391340",
@@ -67,6 +92,15 @@ const FALLBACK_RECIPES = [
   {
     id: 8,
     title: "胡麻茄絲（素食料理）（簡單料理）",
+    ingredients: [
+      "茄子",
+      "白芝麻",
+      "芝麻醬",
+      "黑醋",
+      "香油",
+      "二砂",
+      "熱水"
+    ],
     cookTime: "10分鐘",
     servings: "未提供",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/24292907",
@@ -75,6 +109,13 @@ const FALLBACK_RECIPES = [
   {
     id: 9,
     title: "蕃茄茄子芹菜炒蛋（蛋素）",
+    ingredients: [
+      "中牛番茄",
+      "茄子",
+      "蛋",
+      "少許芹菜",
+      "少許油、鹽、紅冰糖"
+    ],
     cookTime: "30分鐘",
     servings: "2人份",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/17276119",
@@ -83,10 +124,40 @@ const FALLBACK_RECIPES = [
   {
     id: 10,
     title: "吃素真幸福🥰 美味可口純素咖哩飯🍛",
+    ingredients: [
+      "綠花椰菜",
+      "茄子",
+      "紅蘿蔔",
+      "豆包",
+      "豆腸",
+      "白飯",
+      "馬鈴薯",
+      "油",
+      "鹽",
+      "水",
+      "1/3鍋",
+      "咖哩"
+    ],
     cookTime: "60 分鐘",
     servings: "2人份",
     recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/24032306",
     image: "https://img-global.cpcdn.com/recipes/f138cba5a1c30e09/120x160cq50/%E5%90%83%E7%B4%A0%E7%9C%9F%E5%B9%B8%E7%A6%8F%F0%9F%A5%B0-%E7%BE%8E%E5%91%B3%E5%8F%AF%E5%8F%A3%E7%B4%94%E7%B4%A0%E5%92%96%E5%93%A9%E9%A3%AF%F0%9F%8D%9B-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
+  },
+  {
+    id: 11,
+    title: "芝麻炸茄（素食料理）（簡單料理）",
+    ingredients: [
+      "茄子(小)",
+      "黑芝麻",
+      "鹽",
+      "酥炸粉",
+      "水",
+      "調理油"
+    ],
+    cookTime: "10分鐘",
+    servings: "未提供",
+    recipe_link: "https://cookpad.com/tw/%E9%A3%9F%E8%AD%9C/23954013",
+    image: "https://img-global.cpcdn.com/recipes/bece42a67bebc081/120x160cq50/%E8%8A%9D%E9%BA%BB%E7%82%B8%E8%8C%84%E7%B4%A0%E9%A3%9F%E6%96%99%E7%90%86%E7%B0%A1%E5%96%AE%E6%96%99%E7%90%86-%E9%A3%9F%E8%AD%9C%E6%88%90%E5%93%81%E7%85%A7%E7%89%87.jpg"
   }
 ];
 
@@ -128,11 +199,11 @@ function filterRecipes(keyword, list) {
   return list.filter(recipe => {
     const titleMatch = recipe.title.toLowerCase().includes(kw);
     // const descMatch = recipe.description.toLowerCase().includes(kw);
-    // const ingredientMatch = recipe.ingredients.some(ing =>
-    //   ing.toLowerCase().includes(kw)
-    // );
+    const ingredientMatch = recipe.ingredients.some(ing =>
+      ing.toLowerCase().includes(kw)
+    );
     // return titleMatch || descMatch || ingredientMatch;
-    return titleMatch;
+    return titleMatch || ingredientMatch;
   });
 }
 
@@ -155,7 +226,7 @@ function renderCards(recipes, container) {
       >
       <div class="recipe-card__content">
         <h2 class="recipe-card__title">${escapeHtml(recipe.title)}</h2>
-        <!-- <p class="recipe-card__description">${escapeHtml(recipe.description)}</p> -->
+        <!-- <p class="recipe-card__description">${escapeHtml(recipe.ingredients)}</p> -->
         <div class="recipe-card__meta">
           <span class="recipe-card__time">${escapeHtml(recipe.cookTime)}</span>
           <a href="${escapeHtml(recipe.recipe_link)}" class="btn">了解更多</a>

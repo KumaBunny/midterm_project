@@ -67,7 +67,9 @@
 /* ========================================
    Reset & Base
    ======================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -474,6 +476,7 @@ input {
    Print Styles
    ======================================== */
 @media print {
+
   .back-btn,
   .btn-group,
   .search-box {
@@ -491,6 +494,7 @@ input {
    Reduced Motion
    ======================================== */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
